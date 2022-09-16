@@ -1,7 +1,6 @@
 local set = vim.opt
 
 set.number = true
-set.relativenumber = true
 set.cursorline = true
 
 set.shiftwidth = 4
@@ -21,3 +20,5 @@ set.scrolloff = 4
 set.termguicolors = true
 
 set.splitright = false
+
+set.modifiable = true

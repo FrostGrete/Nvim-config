@@ -18,11 +18,30 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>f', vim.lsp.buf.formatting, bufopts)
 end
 
+require("symbols-outline").setup()
+
 local lsp_flags = {
 	  debounce_text_changes = 150,
 }
 
 require('lspconfig')['pyright'].setup{
+    on_attach = on_attach,
+	flags = lsp_flags,
+}
+
+require('lspconfig')['clangd'].setup{
 	on_attach = on_attach,
 	flags = lsp_flags,
+}
+
+require('lspconfig')['sumneko_lua'].setup{
+	on_attach = on_attach,
+	flags = lsp_flags,
+	settings = {
+        Lua = {
+            diagnostics = {
+                globals = { 'vim' }
+            }
+        }
+    }
 }

@@ -19,6 +19,6 @@ set.fileencoding = 'utf-8'
 set.scrolloff = 4
 set.termguicolors = true
 
-set.splitright = false
-
 set.modifiable = true
+
+vim.cmd("colorscheme duskfox")

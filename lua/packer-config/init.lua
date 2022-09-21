@@ -22,6 +22,12 @@ return require('packer').startup(function(use)
 	use 'romgrk/barbar.nvim'
 	use 'nvim-treesitter/nvim-treesitter-context'
 	use({
+		"j-hui/fidget.nvim",
+		config = function()
+			require"fidget".setup()
+		end
+	})
+	use({
 		"kylechui/nvim-surround",
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
 		config = function()
@@ -30,6 +36,12 @@ return require('packer').startup(function(use)
 	end
 	})
 	use 'ggandor/lightspeed.nvim'
+	use {
+		'lewis6991/gitsigns.nvim',
+		config = function()
+			require('gitsigns').setup()
+	end
+	}
 	-- LSP Stuff
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/mason.nvim'

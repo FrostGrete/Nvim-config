@@ -47,3 +47,9 @@ map('n', '<F5>', ':DapContinue<CR>', opts)
 map('n', '<F10>', ':DapStepOver<CR>', opts)
 map('n', '<F11>', ':DapStepInto<CR>', opts)
 map('n', '<F12>', ':DapStepOut<CR>', opts)
+
+-- GitSigns
+map('n', '<leader>hp', ':Gitsigns preview_hunk<CR>', opts)
+map('n', '<leader>hb', ':Gitsigns blame_line<CR>', opts)
+map('n', '<leader>tb', ':Gitsigns toggle_current_line_blame<CR>', opts)
+map('n', '<leader>hd', ':Gitsigns diffthis<CR>', opts)

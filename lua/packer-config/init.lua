@@ -1,5 +1,6 @@
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
+	use 'lewis6991/impatient.nvim'
 	use 'EdenEast/nightfox.nvim' -- Colorscheme
 	use 'jiangmiao/auto-pairs'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
@@ -42,6 +43,12 @@ return require('packer').startup(function(use)
 			require('gitsigns').setup()
 	end
 	}
+	use {
+		'numToStr/Comment.nvim',
+		config = function()
+			require('Comment').setup()
+	end
+	}
 	-- LSP Stuff
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/mason.nvim'
@@ -50,6 +57,14 @@ return require('packer').startup(function(use)
 	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 	use 'L3MON4D3/LuaSnip' -- Snippets plugin
 	use 'simrat39/symbols-outline.nvim' -- Show function list
+	use 'SmiteshP/nvim-navic'
+	use 'kkharji/lspsaga.nvim'
+	use {
+  		"folke/trouble.nvim",
+  		config = function()
+    	require("trouble").setup()
+  	end
+}
 	-- Fuzzy Finder
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'

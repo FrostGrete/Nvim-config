@@ -53,3 +53,6 @@ map('n', '<leader>hp', ':Gitsigns preview_hunk<CR>', opts)
 map('n', '<leader>hb', ':Gitsigns blame_line<CR>', opts)
 map('n', '<leader>tb', ':Gitsigns toggle_current_line_blame<CR>', opts)
 map('n', '<leader>hd', ':Gitsigns diffthis<CR>', opts)
+
+-- Trouble plugins
+map('n', '<leader>T', ':TroubleToggle<CR>', opts)

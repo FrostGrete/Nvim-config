@@ -20,5 +20,3 @@ set.scrolloff = 4
 set.termguicolors = true
 
 set.modifiable = true
-
-vim.cmd("colorscheme duskfox")

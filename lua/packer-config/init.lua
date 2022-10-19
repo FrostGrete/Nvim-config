@@ -1,9 +1,18 @@
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'lewis6991/impatient.nvim'
-	use 'EdenEast/nightfox.nvim' -- Colorscheme
+	use {
+		"catppuccin/nvim",
+		as = "catppuccin",
+		config = function()
+			vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
+			require("catppuccin").setup()
+			vim.api.nvim_command "colorscheme catppuccin"
+		end
+}
 	use 'jiangmiao/auto-pairs'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+	use 'm-demare/hlargs.nvim'
 	use 'kyazdani42/nvim-tree.lua'	-- File tree
 	use 'nvim-lualine/lualine.nvim'
 	use 'kyazdani42/nvim-web-devicons'	-- Providing icon
@@ -17,9 +26,7 @@ return require('packer').startup(function(use)
 		require('auto-save')
 	end}
 	use 'lukas-reineke/indent-blankline.nvim'
-	use {"akinsho/toggleterm.nvim", tag = '*', config = function()
-		require("toggleterm").setup()
-	end}
+	use "akinsho/toggleterm.nvim"
 	use 'romgrk/barbar.nvim'
 	use 'nvim-treesitter/nvim-treesitter-context'
 	use({
@@ -36,7 +43,7 @@ return require('packer').startup(function(use)
 		})
 	end
 	})
-	use 'ggandor/lightspeed.nvim'
+	-- use 'ggandor/lightspeed.nvim'
 	use {
 		'lewis6991/gitsigns.nvim',
 		config = function()
@@ -56,15 +63,8 @@ return require('packer').startup(function(use)
 	use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
 	use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
 	use 'L3MON4D3/LuaSnip' -- Snippets plugin
-	use 'simrat39/symbols-outline.nvim' -- Show function list
-	use 'SmiteshP/nvim-navic'
-	use 'kkharji/lspsaga.nvim'
-	use {
-  		"folke/trouble.nvim",
-  		config = function()
-    	require("trouble").setup()
-  	end
-}
+	use 'glepnir/lspsaga.nvim'
+	use 'folke/trouble.nvim'
 	-- Fuzzy Finder
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'

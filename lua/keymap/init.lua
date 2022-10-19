@@ -2,13 +2,11 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 vim.g.mapleader = ' '
 
--- Nvim Tree
-map('n', '<leader>n', ':NvimTreeToggle<CR>', opts)
+-- Basic Nvim command
+map('n', '<esc>', ':noh<CR>', opts)
 
--- ToggleTerm
-map('n', '<leader>tf', ':ToggleTerm direction=float<CR>', opts)
-map('n', '<leader>th', ':ToggleTerm size=8 direction=horizontal<CR>', opts)
-map('n', '<leader>tb', ':ToggleTerm direction=tab<CR>', opts)
+-- Nvim Tree
+map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
 -- Telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
@@ -38,9 +36,6 @@ map('n', '<C-J>', '<C-W>j', opts)
 map('n', '<C-K>', '<C-W>k', opts)
 map('n', '<C-L>', '<C-W>l', opts)
 
--- Symbol Outline/function list
-map('n', '<leader>so', ':SymbolsOutline<CR>', opts)
-
 -- Debugging
 map('n', '<leader>b', ':DapToggleBreakpoint<CR>', opts)
 map('n', '<F5>', ':DapContinue<CR>', opts)
@@ -53,6 +48,3 @@ map('n', '<leader>hp', ':Gitsigns preview_hunk<CR>', opts)
 map('n', '<leader>hb', ':Gitsigns blame_line<CR>', opts)
 map('n', '<leader>tb', ':Gitsigns toggle_current_line_blame<CR>', opts)
 map('n', '<leader>hd', ':Gitsigns diffthis<CR>', opts)
-
--- Trouble plugins
-map('n', '<leader>T', ':TroubleToggle<CR>', opts)

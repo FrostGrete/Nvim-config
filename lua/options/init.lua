@@ -19,4 +19,8 @@ set.fileencoding = 'utf-8'
 set.scrolloff = 4
 set.termguicolors = true
 
-set.modifiable = true
+set.signcolumn = 'auto'
+set.laststatus = 3
+set.cmdheight = 0
+
+vim.api.nvim_command "colorscheme catppuccin-frappe" -- mocha, macchiato, frappe, latte

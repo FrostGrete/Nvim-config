@@ -1,15 +1,7 @@
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim'
 	use 'lewis6991/impatient.nvim'
-	use {
-		"catppuccin/nvim",
-		as = "catppuccin",
-		config = function()
-			vim.g.catppuccin_flavour = "frappe" -- latte, frappe, macchiato, mocha
-			require("catppuccin").setup()
-			vim.api.nvim_command "colorscheme catppuccin"
-		end
-}
+	use 'catppuccin/nvim'
 	use 'jiangmiao/auto-pairs'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 	use 'm-demare/hlargs.nvim'
@@ -30,12 +22,6 @@ return require('packer').startup(function(use)
 	use 'romgrk/barbar.nvim'
 	use 'nvim-treesitter/nvim-treesitter-context'
 	use({
-		"j-hui/fidget.nvim",
-		config = function()
-			require"fidget".setup()
-		end
-	})
-	use({
 		"kylechui/nvim-surround",
 		tag = "*", -- Use for stability; omit to use `main` branch for the latest features
 		config = function()
@@ -43,7 +29,7 @@ return require('packer').startup(function(use)
 		})
 	end
 	})
-	-- use 'ggandor/lightspeed.nvim'
+	use 'ggandor/leap.nvim'
 	use {
 		'lewis6991/gitsigns.nvim',
 		config = function()
@@ -56,6 +42,19 @@ return require('packer').startup(function(use)
 			require('Comment').setup()
 	end
 	}
+	use {
+		'kevinhwang91/nvim-hlslens',
+		config = function ()
+			require('hlslens').setup()
+		end
+	}
+	use 'MunifTanjim/nui.nvim'
+	use {
+		"folke/noice.nvim",
+		config = function()
+			require("noice").setup()
+		end
+	}
 	-- LSP Stuff
 	use 'neovim/nvim-lspconfig'
 	use 'williamboman/mason.nvim'
@@ -65,6 +64,15 @@ return require('packer').startup(function(use)
 	use 'L3MON4D3/LuaSnip' -- Snippets plugin
 	use 'glepnir/lspsaga.nvim'
 	use 'folke/trouble.nvim'
+	use {
+		"https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+		config = function()
+			require("lsp_lines").setup()
+		end,
+	}
+	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'stevearc/aerial.nvim'
+	use 'onsails/lspkind.nvim'
 	-- Fuzzy Finder
 	use 'nvim-lua/plenary.nvim'
 	use 'nvim-telescope/telescope.nvim'

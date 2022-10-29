@@ -8,6 +8,9 @@ map('n', '<esc>', ':noh<CR>', opts)
 -- Nvim Tree
 map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
+-- Trouble
+map('n', '<leader>T', ':TroubleToggle<CR>', opts)
+
 -- Telescope
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
@@ -48,3 +51,5 @@ map('n', '<leader>hp', ':Gitsigns preview_hunk<CR>', opts)
 map('n', '<leader>hb', ':Gitsigns blame_line<CR>', opts)
 map('n', '<leader>tb', ':Gitsigns toggle_current_line_blame<CR>', opts)
 map('n', '<leader>hd', ':Gitsigns diffthis<CR>', opts)
+
+require('leap').add_default_mappings()
